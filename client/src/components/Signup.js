@@ -40,6 +40,11 @@ class Signup extends Component {
                 message: "One or More Fields not Entered"
             })
             this.handleShow();
+        } else if (this.state.password !== this.state.confirmPassword) {
+            this.setState({
+                message: "Passwords Do Not Match"
+            })
+            this.handleShow();
         } else {
             API.signUpUser(this.state.email, this.state.password)
             .then(res => {
