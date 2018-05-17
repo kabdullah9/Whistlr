@@ -46,7 +46,10 @@ class Login extends Component {
                     // take them to their profile page
                     this.props.history.replace(`/profile/${res.data.user._id}`);
                 })
-                .catch(err => alert(err));
+                .catch(err => {this.setState({
+                    message: "Username or Password Incorrect"
+                })
+                this.handleShow();});
         }
 
 
