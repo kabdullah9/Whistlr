@@ -1,7 +1,12 @@
 const router = require("express").Router();
 const post = require("./post");
 const authenticationController = require("../../controllers/authenticationController")
+const exjwt = require('express-jwt');
+const config = require('./../../config');
 
+const isAuthenticated = exjwt({
+    secret: config.tokenSecret
+});
 // Book routes
 router.use("/post", post);
 
@@ -13,6 +18,6 @@ router.route("/signup")
     .post(authenticationController.create);
 
 router.route("/user/:id")
-    .get(authenticationController.findId);
+    .get(isAuthenticated, authenticationController.findId);
     
 module.exports = router;

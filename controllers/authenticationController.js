@@ -1,9 +1,10 @@
 const db = require('../models');
 const jwt = require('jsonwebtoken');
 const exjwt = require('express-jwt');
-// Init the express-jwt middleware
+const config = require('./../config');
+
 const isAuthenticated = exjwt({
-    secret: 'all sorts of code up in here'
+    secret: config.tokenSecret
 });
 
 module.exports = {
@@ -13,7 +14,7 @@ module.exports = {
         }).then(user => {
             user.verifyPassword(req.body.password, (err, isMatch) => {
                 if (isMatch && !err) {
-                    let token = jwt.sign({ id: user._id, email: user.email }, 'all sorts of code up in here', { expiresIn: 129600 }); // Sigining the token
+                    let token = jwt.sign({ id: user._id, email: user.email }, config.tokenSecret, { expiresIn: 129600 }); // Sigining the token
                     res.json({ success: true, message: "Token Issued!", token: token, user: user });
                 } else {
                     res.status(401).json({ success: false, message: "Authentication failed. Wrong password." });

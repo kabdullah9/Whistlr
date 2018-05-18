@@ -3,9 +3,10 @@ const router = require("express").Router();
 const apiRoutes = require("./api");
 const jwt = require('jsonwebtoken');
 const exjwt = require('express-jwt');
+const config = require('./../config');
 // Init the express-jwt middleware
 const isAuthenticated = exjwt({
-    secret: 'all sorts of code up in here'
+    secret: config.tokenSecret
 });
 
 // API Routes
