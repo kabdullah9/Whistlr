@@ -8,4 +8,5 @@ router.route("/")
 
 router.route("/:id")
     .delete(postController.remove);
+    
 module.exports = router;
