@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import AuthService from '../AuthService';
+import AuthService from './../AuthService';
 import API from '../../utils/API';
 import Modal from "./../MyModal";
-import Logo from "../../Images/Whistlr.png";
+import logo from "./whistlr-black.png";
 import "./Signup.css"
 
 class Signup extends Component {
@@ -71,7 +71,7 @@ class Signup extends Component {
             <div className="container">
                 <div className="row">
                     <div className="col-md-6">
-                        <Link to="/"><img alt="logo" src={Logo} id="logo" /></Link>
+                        <Link to="/"><img alt="logo" src={logo} id="logo" /></Link>
                     </div>
                     <div className="col-md-6">
                         <h1>Signup</h1>
