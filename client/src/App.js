@@ -17,7 +17,7 @@ class App extends Component {
     this.setState({
       profileLink: profileLinkURL
     });
-  }
+  };
 
   handleLogout = () => {
     Auth.logout();
@@ -26,6 +26,10 @@ class App extends Component {
 
   goToEditProfile = () => {
     this.props.history.replace(this.state.profileLink);
+  };
+
+  goToProfile = () => {
+    this.props.history.replace('/login');
   };
 
   render() {
