@@ -13,7 +13,6 @@ import { Link } from 'react-router-dom';
 class Profile extends Component {
 
   state = {
-    username: "",
     email: ""
   };
   
@@ -21,7 +20,6 @@ class Profile extends Component {
   componentDidMount() {
     API.getUser(this.props.user.id).then(res => {
       this.setState({
-        username: res.data.username,
         email: res.data.email
       })
     });
@@ -30,8 +28,12 @@ class Profile extends Component {
   render() {
     return (
       <div className="container Profile">
+<<<<<<< HEAD
         <h1>Welcome to Your Whistlr HQ!</h1>
         <p>Username: {this.state.username}</p>
+=======
+        <h1>On the profile page!</h1>
+>>>>>>> e0d6ddae1022dab40c0fa8c4150ad0556098e522
         <p>Email: {this.state.email}</p>
         <Link to="/">Go home</Link>
         
