@@ -5,19 +5,24 @@ import API from '../../utils/API';
 import { Link } from 'react-router-dom';
 import "./Profile.css";
 import { Panel, Collapse } from "react-bootstrap";
+import socketIOClient from 'socket.io-client'
 const Auth = new AuthService();
 
 class Profile extends Component {
 
-    state = {
-        email: "",
-        sideBar: true,
-        open: false,
-        results: [],
-        title: "",
-        category: "",
-        content: ""
-    };
+    constructor() {
+        super()
+        this.state = {
+            endpoint: "http://localhost:3001",
+            email: "",
+            sideBar: true,
+            open: false,
+            results: [],
+            title: "",
+            category: "",
+            content: ""
+        }
+    }
 
     componentDidMount() {
         API.getUser(this.props.user.id).then(res => {
@@ -74,11 +79,28 @@ class Profile extends Component {
             .then(res => this.setState({
                 results: res.data
             }))
-            .then(() => { console.log(this.state.results) })
+
+            .then(() => { this.createPost() })
             .catch(err => console.log(err));
     }
 
+    createPost = () => {
+        const socket = socketIOClient(this.state.endpoint);
+        socket.emit('post', this.state.results);
+      }
+
     render() {
+
+        const socket = socketIOClient(this.state.endpoint)
+
+        socket.on('post', results => {
+            this.setState({
+              results : results
+            });
+            console.log("message from socket", this.state.results);
+          });
+
+
         return (
             <div className="Profile">
                 <div className="row">
@@ -129,17 +151,17 @@ class Profile extends Component {
                                 </Collapse>
                             </Panel.Heading>
                             <Panel.Body>
-                                {this.state.results.length === 0 ? "Nothing Posted" : 
-                            this.state.results.map((key, index) => 
-                                
-                                <Panel key={index}>
-                                <Panel.Body>
-                                    <p>Title: {key.title} Category: {key.category}</p>
-                                    <div id="panelContent">Content: {key.content}</div>
-                                </Panel.Body>
-                              </Panel>
-                            
-                            )}
+                                {this.state.results.length === 0 ? "Nothing Posted" :
+                                    this.state.results.map((key, index) =>
+
+                                        <Panel key={index}>
+                                            <Panel.Body>
+                                                <p>Title: {key.title} Category: {key.category}</p>
+                                                <div id="panelContent">Content: {key.content}</div>
+                                            </Panel.Body>
+                                        </Panel>
+
+                                    )}
                             </Panel.Body>
                         </Panel>
                     </div>
