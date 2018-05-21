@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import AuthService from './../AuthService';
-import API from '../../utils/API';
+import { Link } from 'react-router-dom';
 import Modal from "./../MyModal";
 import logo from "./whistlr-black.png";
-import "./Signup.css"
+import "./Login.css";
 
-class Signup extends Component {
+class Login extends Component {
     constructor() {
         super();
         this.Auth = new AuthService();
@@ -37,26 +36,27 @@ class Signup extends Component {
     handleFormSubmit = event => {
         event.preventDefault();
 
-        if (!this.state.password || !this.state.email || !this.state.confirmPassword) {
+        if (!this.state.email || !this.state.password) {
             this.setState({
                 message: "One or More Fields not Entered"
             })
             this.handleShow();
-        } else if (this.state.password !== this.state.confirmPassword) {
-            this.setState({
-                message: "Passwords Do Not Match"
-            })
-            this.handleShow();
         } else {
-            API.signUpUser(this.state.email, this.state.password)
+            this.Auth.login(this.state.email, this.state.password)
                 .then(res => {
-                    console.log(res.data);
-                    // once the user has signed up
-                    // send them to the login page
-                    this.props.history.replace('/login');
+                    // once user is logged in
+                    // take them to their profile page
+                    this.props.history.replace(`/profile/${res.data.user._id}`);
                 })
-                .catch(err => alert(err));
+                .catch(err => {
+                    this.setState({
+                        message: "Username or Password Incorrect"
+                    })
+                    this.handleShow();
+                });
         }
+
+
     };
 
     handleChange = event => {
@@ -73,8 +73,8 @@ class Signup extends Component {
                     <div className="col-md-6">
                         <Link to="/"><img alt="logo" src={logo} id="logo" /></Link>
                     </div>
-                    <div className="col-md-6 signup">
-                        <h1>Signup</h1>
+                    <div className="col-md-6 login">
+                        <h1>Login</h1>
                         <form onSubmit={this.handleFormSubmit}>
                             <div className="form-group">
                                 <label htmlFor="email">Email address:</label>
@@ -94,26 +94,18 @@ class Signup extends Component {
                                     id="pwd"
                                     onChange={this.handleChange} />
                             </div>
-                            <div className="form-group">
-                                <label htmlFor="confirmPwd">Re-Enter Password:</label>
-                                <input className="form-control"
-                                    placeholder="Password goes here..."
-                                    name="confirmPassword"
-                                    type="password"
-                                    id="confirmPwd"
-                                    onChange={this.handleChange} />
-                            </div>
                             <button type="submit" className="btn btn-primary">Submit</button>
                         </form>
-                        <p><Link to="/login">Go to Login</Link></p>
+                        <p><Link to="/signup">Go to Signup</Link></p>
+
+                        <Modal show={this.state.show} hide={this.handleClose} text={this.state.message} />
                     </div>
                 </div>
 
-
-                <Modal show={this.state.show} hide={this.handleClose} text={this.state.message} />
             </div>
+
         );
     }
 }
 
-export default Signup;
+export default Login;
