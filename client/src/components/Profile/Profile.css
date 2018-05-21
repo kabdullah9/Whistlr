@@ -38,3 +38,7 @@
 .content {
     width: 100%;
 }
+
+#panelContent {
+    text-align: left;
+}

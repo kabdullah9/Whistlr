@@ -12,7 +12,11 @@ class Profile extends Component {
     state = {
         email: "",
         sideBar: true,
-        open: false
+        open: false,
+        results: [],
+        title: "",
+        category: "",
+        content: ""
     };
 
     componentDidMount() {
@@ -21,6 +25,8 @@ class Profile extends Component {
                 email: res.data.email
             })
         });
+
+        this.getPosts();
     }
 
     toggleSide = () => {
@@ -32,7 +38,45 @@ class Profile extends Component {
     handleLogout = () => {
         Auth.logout();
         this.props.history.replace('/login');
+    }
+
+    handleInputChange = event => {
+        const { name, value } = event.target;
+        this.setState({
+            [name]: value
+        });
     };
+
+    handleFormSubmit = event => {
+        event.preventDefault();
+        if (this.state.title && this.state.content) {
+            API.create({
+                title: this.state.title,
+                category: this.state.category,
+                content: this.state.content
+            })
+                .then(res => {
+                    this.getPosts()
+                    console.log(res);
+                }
+
+                ).then(this.setState({
+                    title: "",
+                    category: "",
+                    content: ""
+                }))
+                .catch(err => console.log(err));
+        }
+    };
+
+    getPosts = () => {
+        API.findPost()
+            .then(res => this.setState({
+                results: res.data
+            }))
+            .then(() => { console.log(this.state.results) })
+            .catch(err => console.log(err));
+    }
 
     render() {
         return (
@@ -49,38 +93,54 @@ class Profile extends Component {
                         <h2>Whistles</h2>
                         <Panel>
                             <Panel.Heading>
-                                <h3 onClick={() => this.setState({ open: !this.state.open })}>Blow the Whistle</h3>
+                                <h4 onClick={() => this.setState({ open: !this.state.open })}>Blow the Whistle</h4>
                                 <Collapse in={this.state.open}>
                                     <form className="form-horizontal">
                                         <div className="form-group">
                                             <label htmlFor="Title" className="col-sm-2 control-label">Title</label>
                                             <div className="col-sm-10">
-                                                <input type="text" className="form-control" id="Title" placeholder="Title" />
+                                                <input value={this.state.title}
+                                                    onChange={this.handleInputChange}
+                                                    name="title" type="text" className="form-control" id="Title" placeholder="Title" />
                                             </div>
                                         </div>
                                         <div className="form-group">
                                             <label htmlFor="category" className="col-sm-2 control-label">Category</label>
                                             <div className="col-sm-10">
-                                                <input type="text" className="form-control" id="category" placeholder="Category" />
+                                                <input value={this.state.category}
+                                                    onChange={this.handleInputChange}
+                                                    name="category" type="text" className="form-control" id="category" placeholder="Category" />
                                             </div>
                                         </div>
                                         <div className="form-group">
                                             <label htmlFor="content" className="col-sm-2 control-label">Content</label>
                                             <div className="col-sm-10">
-                                                <textarea id="content" className="form-control" rows="3" placeholder="Content"></textarea>
+                                                <textarea value={this.state.content}
+                                                    onChange={this.handleInputChange}
+                                                    name="content" id="content" className="form-control" rows="3" placeholder="Content"></textarea>
                                             </div>
                                         </div>
                                         <div className="form-group">
                                             <div className="col-sm-12">
-                                                <button type="submit" className="btn btn-default">Submit</button>
+                                                <button onClick={this.handleFormSubmit} type="submit" className="btn btn-default">Submit</button>
                                             </div>
                                         </div>
                                     </form>
                                 </Collapse>
                             </Panel.Heading>
                             <Panel.Body>
-                                Panel footer
+                                {this.state.results.length === 0 ? "Nothing Posted" : 
+                            this.state.results.map((key, index) => 
+                                
+                                <Panel key={index}>
+                                <Panel.Body>
+                                    <p>Title: {key.title} Category: {key.category}</p>
+                                    <div id="panelContent">Content: {index.content}</div>
                                 </Panel.Body>
+                              </Panel>
+                            
+                            )}
+                            </Panel.Body>
                         </Panel>
                     </div>
 
