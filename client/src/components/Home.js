@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import withAuth from './withAuth';
 import API from '../utils/API';
+import Footer from "./Footer";
 import { Navbar, Header, Brand, Toggle, Collapse, Form, FormGroup, Button, FormControl, Nav, NavItem, Jumbotron, Carousel, Item, Caption, Row, Col, Panel, Grid } from 'react-bootstrap';
 // import { Link } from 'react-router-dom';
 
@@ -77,7 +78,7 @@ class Home extends Component {
                     <p className="learnBtn">
                             <Button  bsStyle="primary" href="/about" >Learn more</Button>
                         </p>
-                        <Panel.Footer>Panel footer</Panel.Footer>
+                        <Footer />
                 </Panel>
             </div>
 
