@@ -3,12 +3,14 @@ import AuthService from './../AuthService';
 import withAuth from './../withAuth';
 import API from '../../utils/API';
 import { Link } from 'react-router-dom';
+import "./Profile.css";
 const Auth = new AuthService();
 
 class Profile extends Component {
 
     state = {
-        email: ""
+        email: "",
+        sideBar: true
     };
 
     componentDidMount() {
@@ -19,6 +21,12 @@ class Profile extends Component {
         });
     }
 
+    toggleSide = () => {
+        this.setState({
+            sideBar: !this.state.sideBar
+        })
+    }
+
     handleLogout = () => {
         Auth.logout();
         this.props.history.replace('/login');
@@ -26,11 +34,21 @@ class Profile extends Component {
 
     render() {
         return (
-            <div className="container Profile">
-                <h1>On the profile page!</h1>
-                <p>Email: {this.state.email}</p>
-                <button type="button" className="btn btn-danger" onClick={this.handleLogout}>Logout</button>
-                <Link to="/">Go home</Link>
+            <div className="Profile">
+                <div className="row">
+                    <div className={this.state.sideBar ? "sidebar col-md-3" : "col-md-3 sidebar active"}>
+                        <h3>On the profile page!</h3>
+                        <p>Email: {this.state.email}</p>
+                        <button type="button" className="btn btn-danger" onClick={this.handleLogout}>Logout</button>
+                        <button type="button" className="btn btn-default toggleBtn" onClick={this.toggleSide}>{this.state.sideBar ?"<" : ">"}</button>
+                        <Link to="/">Go home</Link>
+                    </div>
+                    <div className={this.state.sideBar ? "col-md-9 text-center" : "col-md-9 text-center mainFull"}>
+                    <h2>Whistles</h2>
+                    </div>
+
+                </div>
+
             </div>
         )
     }

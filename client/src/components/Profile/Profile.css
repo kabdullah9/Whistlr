@@ -1,0 +1,30 @@
+.col-md-3 {
+    background: darkgray;
+    position: fixed;
+    height: 100%;
+    transition-duration: 1s;
+}
+
+.col-md-9 {
+    left: 25%;
+    transition-duration: 1s;
+}
+
+.toggleBtn {
+    position: absolute;
+    right: 0;
+    height: 100%;
+    top: 0;
+}
+
+.toggleBtn:focus {
+    outline:0;
+}
+
+.mainFull {
+    transform: translate(-25%);
+}
+
+.active {
+    transform: translate(-275px);
+}
