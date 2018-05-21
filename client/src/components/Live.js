@@ -30,6 +30,11 @@ class Live extends Component {
     });
   }
 
+  // creat status function
+  // sendstatus = e => {
+  //   socket.emit('status', s);
+  // }
+
   sendMessage = e => {
     e.preventDefault();
     const socket = socketIOClient(this.state.endpoint);
@@ -51,8 +56,14 @@ class Live extends Component {
 
     socket.on('message', message => {
       this.setState({
-        sentMessage : message
+        sentMessage : message 
+
+        // check if there is no input
+        
       });
+      if (message === ''){
+        this.sendstatus('nothing in input')
+        }
       console.log("message from socket", this.state.sentMessage);
     });
     return (
@@ -64,7 +75,31 @@ class Live extends Component {
           <button type="submit">Submit</button>
         </form>
         <p>Making sure this works</p>
+
+        <div className="container">
+                <div className="row">
+                    <div className="col-4">
+                        <div className="card">
+                            <div className="card-body">
+                                <div className="card-title">Global Chat</div>
+                                <hr/>
+                                <div className="messages">
+                                    
+                                </div>
+                            </div>
+                            <div className="card-footer">
+                                    <input type="text" placeholder="Username" className="form-control"/>
+                                    <br/>
+                                    <input type="text" placeholder="Message" className="form-control"/>
+                                    <br/>
+                                    <button className="btn btn-primary form-control">Send</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
       </div>
+      
 
     )
   }
