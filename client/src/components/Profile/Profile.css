@@ -12,9 +12,15 @@
 
 .toggleBtn {
     position: absolute;
-    right: 0;
+    right: -35px;
     height: 100%;
     top: 0;
+    opacity: 0;
+    transition: opacity .3s;
+}
+
+.toggleBtn:hover {
+    opacity: 1;
 }
 
 .toggleBtn:focus {
@@ -26,5 +32,5 @@
 }
 
 .active {
-    transform: translate(-275px);
+    transform: translate(-305px);
 }
