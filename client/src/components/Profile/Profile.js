@@ -135,7 +135,7 @@ class Profile extends Component {
                                 <Panel key={index}>
                                 <Panel.Body>
                                     <p>Title: {key.title} Category: {key.category}</p>
-                                    <div id="panelContent">Content: {index.content}</div>
+                                    <div id="panelContent">Content: {key.content}</div>
                                 </Panel.Body>
                               </Panel>
                             
