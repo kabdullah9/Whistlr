@@ -8,7 +8,7 @@ class Posts extends Component {
     constructor() {
         super()
         this.state = {
-            endpoint: "http://localhost:3001",
+            endpoint: "https://whistlr.herokuapp.com/",
             email: "",
             sideBar: true,
             open: false,
