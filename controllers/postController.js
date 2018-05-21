@@ -4,6 +4,7 @@ module.exports = {
     findAll: function (req, res) {
         db.Post
             .find(req.query)
+            .sort({ _id: -1 })
             .then(dbmodel => res.json(dbmodel))
             .catch(err => res.status(422).json(err))
     },
