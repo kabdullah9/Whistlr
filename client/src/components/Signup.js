@@ -67,45 +67,6 @@ class Signup extends Component {
     render() {
         return (
             <div className="container">
-
-<<<<<<< HEAD
-        <h1>Signup</h1>
-        <form onSubmit={this.handleFormSubmit}>
-          <div className="form-group">
-            <label htmlFor="username">Username:</label>
-            <input className="form-control"
-                   placeholder="Username goes here..."
-                   name="username"
-                   type="text"
-                   id="username"
-                   onChange={this.handleChange}/>
-          </div>
-          <div className="form-group">
-            <label htmlFor="email">Email address:</label>
-            <input className="form-control"
-                   placeholder="Email goes here..."
-                   name="email"
-                   type="email"
-                   id="email"
-                   onChange={this.handleChange}/>
-          </div>
-          <div className="form-group">
-            <label htmlFor="pwd">Password:</label>
-            <input className="form-control"
-                   placeholder="Password goes here..."
-                   name="password"
-                   type="password"
-                   id="pwd"
-                   onChange={this.handleChange}/>
-          </div>
-          <button type="submit" className="btn btn-primary">Submit</button>
-        </form>
-        <p><Link to="/login">Go to Login</Link></p>
-        <p><Link to="/profile">Profile Page</Link></p>
-      </div>
-    );
-  }
-=======
                 <h1>Signup</h1>
                 <form onSubmit={this.handleFormSubmit}>
                     <div className="form-group">
@@ -137,13 +98,14 @@ class Signup extends Component {
                     </div>
                     <button type="submit" className="btn btn-primary">Submit</button>
                 </form>
+                
                 <p><Link to="/login">Go to Login</Link></p>
+                <p><Link to="/profile">Profile Page</Link></p>
 
                 <Modal show={this.state.show} hide={this.handleClose} text={this.state.message} />
             </div>
         );
     }
->>>>>>> e0d6ddae1022dab40c0fa8c4150ad0556098e522
 }
 
 export default Signup;

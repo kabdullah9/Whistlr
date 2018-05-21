@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import withAuth from './withAuth';
 import API from '../utils/API';
+import d3 from "d3";
 import { Link } from 'react-router-dom';
+//import { Col, Row, Container } from "../../components/Grid";
 
 /* const styles = StyleSheet.create({
   stretch: {
@@ -28,14 +30,12 @@ class Profile extends Component {
   render() {
     return (
       <div className="container Profile">
-<<<<<<< HEAD
-        <h1>Welcome to Your Whistlr HQ!</h1>
-        <p>Username: {this.state.username}</p>
-=======
-        <h1>On the profile page!</h1>
->>>>>>> e0d6ddae1022dab40c0fa8c4150ad0556098e522
+        <h1>Welcome to your Whistlr HQ!</h1>
         <p>Email: {this.state.email}</p>
+        <p>Password: {this.state.createdAt}</p>
         <Link to="/">Go home</Link>
+        <Link to="/">Check local Whistlrs</Link>
+
         
         <button className="square" onClick={() => this.setState({value: 'X'})}>
         {this.state.value}
