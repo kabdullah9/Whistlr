@@ -1,32 +1,10 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import logo from './logo.svg';
 import './App.css';
-import AuthService from './components/AuthService';
-import withAuth from './components/withAuth';
-const Auth = new AuthService();
 
 class App extends Component {
 
-  state = {
-    userId: this.props.user.id,
-    profileLink: ""
-  };
-
-  componentDidMount() {
-    const profileLinkURL = `/profile/${this.state.userId}`;
-    this.setState({
-      profileLink: profileLinkURL
-    });
-  };
-
-  handleLogout = () => {
-    Auth.logout();
-    this.props.history.replace('/login');
-  };
-
-  goToEditProfile = () => {
-    this.props.history.replace(this.state.profileLink);
-  };
 
   goToProfile = () => {
     this.props.history.replace('/login');
@@ -37,15 +15,15 @@ class App extends Component {
       <div className="App">
         <div className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome {this.props.user.email}</h2>
+          <h2>Welcome to Whistlr</h2>
         </div>
         <p className="App-intro">
-          <button type="button" className="btn btn-primary" onClick={this.goToEditProfile}>Go to Profile</button>
-          <button type="button" className="btn btn-danger" onClick={this.handleLogout}>Logout</button>
+        <Link to="/login"><button type="button" className="btn btn-primary">Login</button></Link>
+        <Link to="/signup"><button type="button" className="btn btn-danger">Signup</button></Link>
         </p>
       </div>
     );
   }
 }
 
-export default withAuth(App);
+export default App;
