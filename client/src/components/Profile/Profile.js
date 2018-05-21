@@ -4,14 +4,15 @@ import withAuth from './../withAuth';
 import API from '../../utils/API';
 import { Link } from 'react-router-dom';
 import "./Profile.css";
-import { Panel } from "react-bootstrap";
+import { Panel, Collapse } from "react-bootstrap";
 const Auth = new AuthService();
 
 class Profile extends Component {
 
     state = {
         email: "",
-        sideBar: true
+        sideBar: true,
+        open: false
     };
 
     componentDidMount() {
@@ -47,8 +48,39 @@ class Profile extends Component {
                     <div className={this.state.sideBar ? "col-md-8 text-center" : "col-md-8 text-center mainFull"}>
                         <h2>Whistles</h2>
                         <Panel>
-                            <Panel.Body>Panel content</Panel.Body>
-                            <Panel.Footer>Panel footer</Panel.Footer>
+                            <Panel.Heading>
+                                <h3 onClick={() => this.setState({ open: !this.state.open })}>Blow the Whistle</h3>
+                                <Collapse in={this.state.open}>
+                                    <form className="form-horizontal">
+                                        <div className="form-group">
+                                            <label htmlFor="Title" className="col-sm-2 control-label">Title</label>
+                                            <div className="col-sm-10">
+                                                <input type="text" className="form-control" id="Title" placeholder="Title" />
+                                            </div>
+                                        </div>
+                                        <div className="form-group">
+                                            <label htmlFor="category" className="col-sm-2 control-label">Category</label>
+                                            <div className="col-sm-10">
+                                                <input type="text" className="form-control" id="category" placeholder="Category" />
+                                            </div>
+                                        </div>
+                                        <div className="form-group">
+                                            <label htmlFor="content" className="col-sm-2 control-label">Content</label>
+                                            <div className="col-sm-10">
+                                                <textarea id="content" className="form-control" rows="3" placeholder="Content"></textarea>
+                                            </div>
+                                        </div>
+                                        <div className="form-group">
+                                            <div className="col-sm-12">
+                                                <button type="submit" className="btn btn-default">Submit</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </Collapse>
+                            </Panel.Heading>
+                            <Panel.Body>
+                                Panel footer
+                                </Panel.Body>
                         </Panel>
                     </div>
 
