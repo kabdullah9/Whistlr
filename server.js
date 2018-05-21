@@ -48,7 +48,6 @@ app.use(function (err, req, res, next) {
   }
 });
 
-<<<<<<< HEAD
 // This is what the socket.io syntax is like, we will work this later
 io.on('connection', socket => {
   console.log('New client connected');
@@ -79,8 +78,5 @@ app.get("*", function(req, res) {
 });
 
 server.listen(PORT, function() {
-=======
-app.listen(PORT, function() {
->>>>>>> ee416556203fc1b1c1ce8c8eceacc5b458575eba
   console.log(`🌎 ==> Server now on port ${PORT}!`);
 });
