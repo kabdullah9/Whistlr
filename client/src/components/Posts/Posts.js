@@ -2,6 +2,7 @@ import socketIOClient from 'socket.io-client';
 import React, { Component } from 'react';
 import { Panel, Collapse } from "react-bootstrap";
 import API from '../../utils/API';
+import "./Posts.css"
 
 class Posts extends Component {
 
@@ -83,10 +84,9 @@ class Posts extends Component {
 
         return (
             <div>
-            <h2>Whistles</h2>
             <Panel>
-                <Panel.Heading>
-                    <h4 onClick={() => this.setState({ open: !this.state.open })}>Blow the Whistle</h4>
+                <Panel.Heading className="text-center">
+                    <button className="text-center btn btn-info" onClick={() => this.setState({ open: !this.state.open })}>Blow the Whistle</button>
                     <Collapse in={this.state.open}>
                         <form className="form-horizontal">
                             <div className="form-group">
@@ -106,16 +106,16 @@ class Posts extends Component {
                                 </div>
                             </div>
                             <div className="form-group">
-                                <label htmlFor="content" className="col-sm-2 control-label">Content</label>
+                                <label htmlFor="formContent" className="col-sm-2 control-label">Content</label>
                                 <div className="col-sm-10">
                                     <textarea value={this.state.content}
                                         onChange={this.handleInputChange}
-                                        name="content" id="content" className="form-control" rows="3" placeholder="Content"></textarea>
+                                        name="content" id="formContent" className="form-control" rows="3" placeholder="Content"></textarea>
                                 </div>
                             </div>
                             <div className="form-group">
                                 <div className="col-sm-12">
-                                    <button onClick={this.handleFormSubmit} type="submit" className="btn btn-default">Submit</button>
+                                    <button onClick={this.handleFormSubmit} type="submit" className="btn btn-primary">Submit</button>
                                 </div>
                             </div>
                         </form>
