@@ -13,7 +13,7 @@ import Login from './components/Login';
 import Profile from './components/Profile';
 import Signup from './components/Signup';
 import About from './components/About';
-import Live from './components/Live';
+
 
 if(localStorage.getItem("id_token")) {
   axios.defaults.headers.common['Authorization'] = `Bearer ${localStorage.getItem('id_token')}`;
@@ -27,7 +27,6 @@ ReactDOM.render(
             <Route exact path="/signup" component={Signup} />
             <Route exact path="/profile/:id" component={Profile} />
             <Route exact path="/about" component={About} />
-            <Route exact path="/live" component={Live} />
             
         </div>
     </Router>
