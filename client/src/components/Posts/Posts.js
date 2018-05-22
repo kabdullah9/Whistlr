@@ -84,57 +84,61 @@ class Posts extends Component {
 
         return (
             <div>
-            <Panel>
-                <Panel.Heading className="text-center">
-                    <button className="text-center btn btn-info" onClick={() => this.setState({ open: !this.state.open })}>Blow the Whistle</button>
-                    <Collapse in={this.state.open}>
-                        <form className="form-horizontal">
-                            <div className="form-group">
-                                <label htmlFor="Title" className="col-sm-2 control-label">Title</label>
-                                <div className="col-sm-10">
-                                    <input value={this.state.title}
-                                        onChange={this.handleInputChange}
-                                        name="title" type="text" className="form-control" id="Title" placeholder="Title" />
+                <Panel>
+                    <Panel.Heading className="text-center">
+                        <button className="text-center btn btn-info" onClick={() => this.setState({ open: !this.state.open })}>Blow the Whistle</button>
+                        <Collapse in={this.state.open}>
+                            <form className="form-horizontal">
+                                <div className="form-group">
+                                    <label htmlFor="Title" className="col-sm-2 control-label">Title</label>
+                                    <div className="col-sm-10">
+                                        <input value={this.state.title}
+                                            onChange={this.handleInputChange}
+                                            name="title" type="text" className="form-control" id="Title" placeholder="Title" />
+                                    </div>
                                 </div>
-                            </div>
-                            <div className="form-group">
-                                <label htmlFor="category" className="col-sm-2 control-label">Category</label>
-                                <div className="col-sm-10">
-                                    <input value={this.state.category}
-                                        onChange={this.handleInputChange}
-                                        name="category" type="text" className="form-control" id="category" placeholder="Category" />
-                                </div>
-                            </div>
-                            <div className="form-group">
-                                <label htmlFor="formContent" className="col-sm-2 control-label">Content</label>
-                                <div className="col-sm-10">
-                                    <textarea value={this.state.content}
-                                        onChange={this.handleInputChange}
-                                        name="content" id="formContent" className="form-control" rows="3" placeholder="Content"></textarea>
-                                </div>
-                            </div>
-                            <div className="form-group">
-                                <div className="col-sm-12">
-                                    <button onClick={this.handleFormSubmit} type="submit" className="btn btn-primary">Submit</button>
-                                </div>
-                            </div>
-                        </form>
-                    </Collapse>
-                </Panel.Heading>
-                <Panel.Body>
-                    {this.state.results.length === 0 ? "Nothing Posted" :
-                        this.state.results.map((key, index) =>
+                                <div className="form-group">
+                                    <label htmlFor="formContent" className="col-sm-2 control-label">Content</label>
+                                    <div className="col-sm-10">
+                                        <select onChange={this.handleInputChange} id="category" name="category" className="form-control">
+                                            <option className="selectPh" value="" selected disabled hidden>Choose a category</option>
+                                            <option value="General">General</option>
+                                            <option value="Theft">Theft</option>
+                                            <option value="Assault">Assault</option>
 
-                            <Panel key={index}>
-                                <Panel.Body>
-                                    <p>Title: {key.title} Category: {key.category}</p>
-                                    <div id="panelContent">Content: {key.content}</div>
-                                </Panel.Body>
-                            </Panel>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div className="form-group">
+                                    <label htmlFor="formContent" className="col-sm-2 control-label">Content</label>
+                                    <div className="col-sm-10">
+                                        <textarea value={this.state.content}
+                                            onChange={this.handleInputChange}
+                                            name="content" id="formContent" className="form-control" rows="3" placeholder="Content"></textarea>
+                                    </div>
+                                </div>
+                                <div className="form-group">
+                                    <div className="col-sm-12">
+                                        <button onClick={this.handleFormSubmit} type="submit" className="btn btn-primary">Submit</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </Collapse>
+                    </Panel.Heading>
+                    <Panel.Body>
+                        {this.state.results.length === 0 ? "Nothing Posted" :
+                            this.state.results.map((key, index) =>
 
-                        )}
-                </Panel.Body>
-            </Panel>
+                                <Panel key={index}>
+                                    <Panel.Body>
+                                        <p>Title: {key.title} Category: {key.category}</p>
+                                        <div id="panelContent">Content: {key.content}</div>
+                                    </Panel.Body>
+                                </Panel>
+
+                            )}
+                    </Panel.Body>
+                </Panel>
             </div>
         )
     }
