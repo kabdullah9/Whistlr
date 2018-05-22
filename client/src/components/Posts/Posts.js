@@ -85,8 +85,8 @@ class Posts extends Component {
         return (
             <div>
             <Panel>
-                <Panel.Heading>
-                    <h4 className="text-center" onClick={() => this.setState({ open: !this.state.open })}>Blow the Whistle</h4>
+                <Panel.Heading className="text-center">
+                    <button className="text-center btn btn-info" onClick={() => this.setState({ open: !this.state.open })}>Blow the Whistle</button>
                     <Collapse in={this.state.open}>
                         <form className="form-horizontal">
                             <div className="form-group">

@@ -74,7 +74,7 @@ class Profile extends Component {
                 </nav>
 
                 <div id="content">
-                    <div className="row contentBody">
+                    <div className={this.state.sideBar ? "row contentBody" : "row contentBody contentActive"}>
                         <div className="col-sx-12">
                             <Posts />
                         </div>

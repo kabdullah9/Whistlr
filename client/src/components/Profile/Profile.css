@@ -1,5 +1,6 @@
 #content {
     width: 75%;
+    transition: all 0.3s;
 }
 
 a, a:hover, a:focus {
@@ -91,6 +92,7 @@ ul ul a {
 
 .contentBody {
     padding-left: 100px;
+    transition: all 0.3s;
 }
 
 .glyphicon {
@@ -114,19 +116,40 @@ ul ul a {
 }
 #sidebar.active .sidebar-header h3 {
     display: none;
+
 }
 #sidebar.active .sidebar-header strong {
     display: block;
     font-size: 30px;
 }
 
-@media screen and (max-width: 768px) {
+#content .contentActive {
+    margin-left: 80px;
+}
+
+@media screen and (max-width: 1080px) {
     #content {
-        width: 85%;
+        width: 68%;
     }
 
     #content .contentBody {
-        padding-left: 120px;
+        padding-left: 80px;
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+    #content {
+        width: 87%;
+    }
+
+    #content .contentBody {
+        padding-left: 19%;
+    }
+
+    #content .contentActive {
+        padding-left: 6%;
+        margin-left: 12px;
     }
 
     #sidebar {
@@ -187,5 +210,12 @@ ul ul a {
     
     .contentBody {
         padding-left: 50px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #content .contentActive {
+        padding-left: 6%;
+        margin-left: 12px;
     }
 }
