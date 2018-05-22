@@ -13,7 +13,7 @@ class Profile extends Component {
         super()
         this.state = {
             sideBar: true,
-            open: false,
+            open: false
         }
     }
 
@@ -38,21 +38,49 @@ class Profile extends Component {
 
     render() {
         return (
-            <div className="Profile">
-                <div className="row">
-                    <div className={this.state.sideBar ? "sidebar col-md-3" : "col-md-3 sidebar active"}>
-                        <h3>On the profile page!</h3>
-                        <p>Email: {this.state.email}</p>
-                        <button type="button" className="btn btn-danger" onClick={this.handleLogout}>Logout</button>
-                        <button type="button" className="btn btn-default toggleBtn" onClick={this.toggleSide}>{this.state.sideBar ? "<" : ">"}</button>
-                        <Link to="/">Go home</Link>
+            <div className="wrapper">
+                <nav id="sidebar" className={this.state.sideBar ? "" : "active"}>
+
+                    <div className="sidebar-header">
+                        <h3>Whistlr</h3>
+                        <strong>W</strong>
                     </div>
-                    <div className={this.state.sideBar ? "col-md-8 text-center" : "col-md-8 text-center mainFull"}>
-                        <Posts/>
+
+
+                    <ul className="list-unstyled components">
+                        <li>
+                            <Link to="/">
+                                <i className="glyphicon glyphicon-home"></i>
+                                Home
+                    </Link>
+                        </li>
+                        <li>
+                            <Link to="/about">
+                                <i className="glyphicon glyphicon-briefcase"></i>
+                                About
+                    </Link>
+
+                        </li>
+                        <li>
+                            <a id="logOut" onClick={this.handleLogout}>
+                                <i className="glyphicon glyphicon-remove-sign"></i>
+                                Log Out
+                    </a>
+                        </li>
+                    </ul>
+                    <button onClick={() => { this.toggleSide() }} type="button" id="sidebarCollapse" className="btn btn-primary navbar-btn">
+                    <i className="glyphicon glyphicon-resize-horizontal"></i>
+                    </button>
+                </nav>
+
+                <div id="content" className={this.state.sideBar ? "" : "contentActive"}>
+                    <div className="row contentBody">
+                        <div className="col-sx-12">
+                            <Posts />
+                        </div>
                     </div>
 
                 </div>
-
             </div>
         )
     }
