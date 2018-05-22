@@ -1,5 +1,6 @@
 #content {
-    width: 78%;
+    margin-left: 300px;
+    width: 70%;
     transition: all 0.3s;
 }
 
@@ -10,6 +11,7 @@ a, a:hover, a:focus {
 }
 
 #sidebar {
+    position:fixed;
     /* don't forget to add all the previously mentioned styles here too */
     background: darkgrey;
     color: #fff;
@@ -95,11 +97,6 @@ ul ul a {
     padding: 10px !important;
 }
 
-.contentBody {
-    padding-left: 100px;
-    transition: all 0.3s;
-}
-
 .glyphicon-home, .glyphicon-briefcase, .glyphicon-remove-sign {
     margin-right: 15px;
 }
@@ -133,33 +130,20 @@ ul ul a {
     font-size: 30px;
 }
 
-#content .contentActive {
-    margin-left: 80px;
-}
-
-@media screen and (max-width: 1080px) {
-    #content {
-        width: 68%;
-    }
-
-    #content .contentBody {
-        padding-left: 80px;
-    }
-
+#content.contentActive {
+    width: 80%;
+    margin-left: 180px;
 }
 
 @media screen and (max-width: 768px) {
     #content {
-        width: 87%;
+        margin-left: 90px;
+        width: 80%;
     }
 
-    #content .contentBody {
-        padding-left: 19%;
-    }
-
-    #content .contentActive {
-        padding-left: 6%;
-        margin-left: 12px;
+    #content.contentActive {
+        margin-left: 160px;
+        width: 70%;
     }
 
     #sidebar {
@@ -167,7 +151,7 @@ ul ul a {
     }
 
     #sidebarCollapse {
-        left: 0px;
+        left: 210px;
     }
 
     #sidebar.active #sidebarCollapse {
@@ -217,15 +201,16 @@ ul ul a {
     #sidebar.active ul ul a {
         padding: 10px !important;
     }
-    
-    .contentBody {
-        padding-left: 50px;
-    }
 }
 
 @media screen and (max-width: 480px) {
-    #content .contentActive {
-        padding-left: 6%;
-        margin-left: 12px;
+    #content {
+        margin-left: 55px;
+        width: 80%;
+    }
+
+    #content.contentActive {
+        margin-left: 110px;
+        width: 70%;
     }
 }
