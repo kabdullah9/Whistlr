@@ -8,7 +8,7 @@ class Posts extends Component {
     constructor() {
         super()
         this.state = {
-            endpoint: "https://whistlr.herokuapp.com/",
+            endpoint: process.env.REACT_APP_SOCKET_URL || 'http://localhost:3001/',
             email: "",
             sideBar: true,
             open: false,
