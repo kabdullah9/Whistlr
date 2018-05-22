@@ -1,5 +1,5 @@
 #content {
-    width: 75%;
+    width: 78%;
     transition: all 0.3s;
 }
 
@@ -41,6 +41,11 @@ a, a:hover, a:focus {
     background: #fff;
 }
 
+#sidebar ul li #logOut:hover {
+    background: crimson;
+    color: white;
+}
+
 #sidebar ul li.active > a, a[aria-expanded="true"] {
     color: #fff;
     background: darkgrey;
@@ -56,8 +61,8 @@ ul ul a {
 }
 
 #sidebar {
-    min-width: 250px;
-    max-width: 250px;
+    min-width: 210px;
+    max-width: 210px;
     height: 100vh;
 }
 
@@ -95,15 +100,20 @@ ul ul a {
     transition: all 0.3s;
 }
 
-.glyphicon {
+.glyphicon-home, .glyphicon-briefcase, .glyphicon-remove-sign {
     margin-right: 15px;
 }
 
+.glyphicon-resize-horizontal {
+    margin-left: -7px;
+}
+
 #sidebarCollapse {
+    width: 13px;
     position: absolute;
     height: 100%;
     top: -6px;
-    left: 250px;
+    left: 210px;
     transition: all 0.4s;
 }
 
@@ -153,7 +163,7 @@ ul ul a {
     }
 
     #sidebar {
-        margin-left: -250px;
+        margin-left: -210px;
     }
 
     #sidebarCollapse {

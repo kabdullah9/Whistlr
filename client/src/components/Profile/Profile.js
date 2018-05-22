@@ -69,7 +69,7 @@ class Profile extends Component {
                         </li>
                     </ul>
                     <button onClick={() => { this.toggleSide() }} type="button" id="sidebarCollapse" className="btn btn-primary navbar-btn">
-                        {">"}
+                    <i className="glyphicon glyphicon-resize-horizontal"></i>
                     </button>
                 </nav>
 
