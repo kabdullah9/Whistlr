@@ -1,7 +1,12 @@
 import React, { Component } from 'react';
+<<<<<<< HEAD:client/src/components/Home.js
 import withAuth from './withAuth';
 import API from '../utils/API';
 import Footer from "./Footer";
+=======
+import withAuth from './../withAuth';
+import API from '../../utils/API';
+>>>>>>> 554a0a0b4877ff6d6403da8b025c5a7904183c88:client/src/components/Home/Home.js
 import { Navbar, Header, Brand, Toggle, Collapse, Form, FormGroup, Button, FormControl, Nav, NavItem, Jumbotron, Carousel, Item, Caption, Row, Col, Panel, Grid } from 'react-bootstrap';
 // import { Link } from 'react-router-dom';
 

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import API from '../utils/API'
+import API from '../../utils/API'
 import { Navbar, Header, Brand, Toggle, Collapse, Form, FormGroup, Button, FormControl, Nav, NavItem, Jumbotron, Carousel, Item, Caption, Row, Col, Panel, Grid, NavDropdown, MenuItem, DropdownButton, ButtonToolbar, Image, Thumbnail } from 'react-bootstrap';
 import './About.css';
 

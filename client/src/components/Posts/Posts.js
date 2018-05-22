@@ -1,0 +1,143 @@
+import socketIOClient from 'socket.io-client';
+import React, { Component } from 'react';
+import { Panel, Collapse } from "react-bootstrap";
+import API from '../../utils/API';
+
+class Posts extends Component {
+
+    constructor() {
+        super()
+        this.state = {
+            endpoint: "https://whistlr.herokuapp.com/",
+            email: "",
+            sideBar: true,
+            open: false,
+            results: [],
+            title: "",
+            category: "",
+            content: ""
+        }
+    }
+
+    componentDidMount() {
+
+        this.getPosts();
+    }
+
+    handleFormSubmit = event => {
+        event.preventDefault();
+        if (this.state.title && this.state.content) {
+            API.create({
+                title: this.state.title,
+                category: this.state.category,
+                content: this.state.content
+            })
+                .then(res => {
+                    this.getPosts()
+                    console.log(res);
+                }
+
+                ).then(this.setState({
+                    title: "",
+                    category: "",
+                    content: ""
+                }))
+                .catch(err => console.log(err));
+        }
+    }
+
+    getPosts = () => {
+        API.findPost()
+            .then(res => this.setState({
+                results: res.data
+            }))
+
+            .then(() => { this.createPost() })
+            .catch(err => console.log(err));
+    }
+
+    createPost = () => {
+        const socket = socketIOClient(this.state.endpoint);
+        socket.emit('post', this.state.results);
+    }
+
+    handleInputChange = event => {
+        const { name, value } = event.target;
+        this.setState({
+            [name]: value
+        });
+    };
+
+
+    render() {
+
+        const socket = socketIOClient(this.state.endpoint)
+
+        socket.on('post', results => {
+            this.setState({
+                results: results
+            });
+            console.log("message from socket", this.state.results);
+        });
+
+
+        return (
+            <div>
+            <h2>Whistles</h2>
+            <Panel>
+                <Panel.Heading>
+                    <h4 onClick={() => this.setState({ open: !this.state.open })}>Blow the Whistle</h4>
+                    <Collapse in={this.state.open}>
+                        <form className="form-horizontal">
+                            <div className="form-group">
+                                <label htmlFor="Title" className="col-sm-2 control-label">Title</label>
+                                <div className="col-sm-10">
+                                    <input value={this.state.title}
+                                        onChange={this.handleInputChange}
+                                        name="title" type="text" className="form-control" id="Title" placeholder="Title" />
+                                </div>
+                            </div>
+                            <div className="form-group">
+                                <label htmlFor="category" className="col-sm-2 control-label">Category</label>
+                                <div className="col-sm-10">
+                                    <input value={this.state.category}
+                                        onChange={this.handleInputChange}
+                                        name="category" type="text" className="form-control" id="category" placeholder="Category" />
+                                </div>
+                            </div>
+                            <div className="form-group">
+                                <label htmlFor="content" className="col-sm-2 control-label">Content</label>
+                                <div className="col-sm-10">
+                                    <textarea value={this.state.content}
+                                        onChange={this.handleInputChange}
+                                        name="content" id="content" className="form-control" rows="3" placeholder="Content"></textarea>
+                                </div>
+                            </div>
+                            <div className="form-group">
+                                <div className="col-sm-12">
+                                    <button onClick={this.handleFormSubmit} type="submit" className="btn btn-default">Submit</button>
+                                </div>
+                            </div>
+                        </form>
+                    </Collapse>
+                </Panel.Heading>
+                <Panel.Body>
+                    {this.state.results.length === 0 ? "Nothing Posted" :
+                        this.state.results.map((key, index) =>
+
+                            <Panel key={index}>
+                                <Panel.Body>
+                                    <p>Title: {key.title} Category: {key.category}</p>
+                                    <div id="panelContent">Content: {key.content}</div>
+                                </Panel.Body>
+                            </Panel>
+
+                        )}
+                </Panel.Body>
+            </Panel>
+            </div>
+        )
+    }
+}
+
+export default Posts;
