@@ -4,7 +4,7 @@ import { Navbar, Header, Brand, Toggle, Collapse, Form, FormGroup, Button, FormC
 import './About.css';
 
 import elk from './images/elk.jpg';
-import cat from './images/cat.jpg';
+import lynx from './images/lynx.jpg';
 import eagle from './images/eagle.jpg';
 import orca from './images/orca.jpg';
 
@@ -80,8 +80,8 @@ render() {
       </Thumbnail>
     </Col>
     <Col xs={6} md={3}>
-      <Thumbnail src={ eagle } className="spiritAnimal" alt="242x200">
-        <h3>Cat</h3>
+      <Thumbnail src={ lynx } className="spiritAnimal" alt="242x200">
+        <h3>Lynx</h3>
         <p>El Gato Peligroso</p>
         <p>
           Something interesting about eagles.
@@ -89,7 +89,7 @@ render() {
       </Thumbnail>
     </Col>
     <Col xs={6} md={3}>
-      <Thumbnail src={ cat } className="spiritAnimal" alt="242x200">
+      <Thumbnail src={ eagle } className="spiritAnimal" alt="242x200">
         <h3>Eagle</h3>
         <p>Description</p>
         <p>
@@ -99,6 +99,12 @@ render() {
     </Col>
   </Row>
 </Grid>
+<Panel bsStyle="primary">
+    <Panel.Heading>
+      <Panel.Title componentClass="h3">Everything you need to know about Whistlr</Panel.Title>
+    </Panel.Heading>
+    <Panel.Body> <p className="aboutTxt">The Whistler App was originally created as a simple in-class application for a coding bootcamp. However this application was turned into something that exceeded everyones expectations. With over 500,000,000 users world-wide, Whistler helps keep users all over the world stay aware of what is going on in their local communitities. Our application features real time whistle updates that will allert users of the most resent incidents.</p> </Panel.Body>
+  </Panel>
     </Panel.Body>
     <Panel.Footer>Panel footer</Panel.Footer>
   </Panel>
