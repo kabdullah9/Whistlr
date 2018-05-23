@@ -1,16 +1,24 @@
+.body {
+    font-family: 'Titillium Web', sans-serif;
+}
+
 .home h1 {
     text-align: center;
+    font-family: 'Titillium Web', sans-serif;
 }
 
 .learnBtn {
     text-align: center;
+    font-family: 'Titillium Web', sans-serif;
 }
 
 .titleDiv{
     height: 50px;
+    font-family: 'Titillium Web', sans-serif;
 }
 
 .caroImage {
+    font-family: 'Titillium Web', sans-serif;
     height: 400px;
     width: 600px;
     margin: auto;
