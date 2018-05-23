@@ -10,6 +10,9 @@ import { Navbar, Header, Brand, Toggle, Collapse, Form, FormGroup, Button, FormC
 import './Home.css';
 import silenced from './images/silenced.jpg';
 import security from './images/high_security.jpeg';
+import guard from './images/guard.jpeg';
+import server from './images/server.jpeg';
+
 
 class Home extends Component {
     render() {
@@ -64,7 +67,7 @@ class Home extends Component {
                         </Carousel.Caption>
                     </Carousel.Item>
                     <Carousel.Item>
-                        <img className="caroImage" alt="900x500" src={security} />
+                        <img className="caroImage" alt="900x500" src={server} />
                         <Carousel.Caption>
                             <h3>Your information is secure!</h3>
                             <p>We use the most cutting edge encryption available on the Internet today.</p>

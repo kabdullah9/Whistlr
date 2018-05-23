@@ -84,7 +84,7 @@ render() {
         <h3>Lynx</h3>
         <p>El Gato Peligroso</p>
         <p>
-          Something interesting about eagles.
+        The feline is the playful, curious, yet harmless animal that runs through your house and claims ownership of alleys throughout the world. The beach is just one large toilet for this animal, which is how we consider security encryption throughout the Internet.
         </p>
       </Thumbnail>
     </Col>
@@ -93,7 +93,7 @@ render() {
         <h3>Eagle</h3>
         <p>Description</p>
         <p>
-          The feline is the playful, curious, yet harmless animal that runs through your house and claims ownership of alleys throughout the world. The beach is just one large toilet for this animal, which is how we consider security encryption throughout the Internet. 
+           Something interesting about eagles.
         </p>
       </Thumbnail>
     </Col>
