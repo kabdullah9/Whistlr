@@ -3,6 +3,7 @@ import withAuth from '../withAuth';
 import API from '../../utils/API';
 //import Footer from "./Footer";
 import { Navbar, Header, Brand, Toggle, Collapse, Form, FormGroup, Button, FormControl, Nav, NavItem, Jumbotron, Carousel, Item, Caption, Row, Col, Panel, Grid } from 'react-bootstrap';
+import Favicon from 'react-favicon';
 // import { Link } from 'react-router-dom';
 
 // create navigation to login and signup
@@ -81,6 +82,7 @@ class Home extends Component {
                         </p>
                         {/* <Footer /> */}
                 </Panel>
+                <Favicon url="https://github.com/kabdullah9/Whistlr/blob/master/client/public/whistlicon.png" />
             </div>
 
         )
