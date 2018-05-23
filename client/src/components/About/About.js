@@ -56,17 +56,17 @@ render() {
     </Jumbotron>
     <Panel>
     <Panel.Heading>
-      <Panel.Title componentClass="h3">Panel heading with a title</Panel.Title>
+      <Panel.Title componentClass="h3">About the Whistlr Team</Panel.Title>
     </Panel.Heading>
-    <Panel.Body>Panel content
+    <Panel.Body>
     <Grid>
   <Row>
     <Col xs={6} md={3}>
       <Thumbnail src={ elk } className="spiritAnimal" alt="242x200">
         <h3>Elk</h3>
-        <p>Description</p>
+        <p>Great Grazer</p>
         <p>
-          About development team here.
+          The most majestic animal of untamed North America.
         </p>
       </Thumbnail>
     </Col>
@@ -82,18 +82,18 @@ render() {
     <Col xs={6} md={3}>
       <Thumbnail src={ eagle } className="spiritAnimal" alt="242x200">
         <h3>Cat</h3>
-        <p>El Gato Loco</p>
+        <p>El Gato Peligroso</p>
         <p>
-          The feline is the playful, curious, and harmless animal that runs through your house and claims ownership of alleys throughout the world. The beach is just one large toilet for this animal, which is how we consider security encryption throughout the Internet. 
+          Something interesting about eagles.
         </p>
       </Thumbnail>
     </Col>
     <Col xs={6} md={3}>
       <Thumbnail src={ cat } className="spiritAnimal" alt="242x200">
-        <h3>Cat</h3>
+        <h3>Eagle</h3>
         <p>Description</p>
         <p>
-          About development team here.
+          The feline is the playful, curious, yet harmless animal that runs through your house and claims ownership of alleys throughout the world. The beach is just one large toilet for this animal, which is how we consider security encryption throughout the Internet. 
         </p>
       </Thumbnail>
     </Col>
