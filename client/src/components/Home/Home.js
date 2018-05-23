@@ -85,7 +85,7 @@ class Home extends Component {
                         </p>
                         {/* <Footer /> */}
                 </Panel>
-                <Favicon url="https://github.com/kabdullah9/Whistlr/blob/master/client/public/whistlicon.png" />
+                <Favicon url="https://github.com/kabdullah9/Whistlr/blob/master/client/public/skull.png" />
             </div>
 
         )
