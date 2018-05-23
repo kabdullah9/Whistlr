@@ -3,6 +3,11 @@ import API from '../../utils/API'
 import { Navbar, Header, Brand, Toggle, Collapse, Form, FormGroup, Button, FormControl, Nav, NavItem, Jumbotron, Carousel, Item, Caption, Row, Col, Panel, Grid, NavDropdown, MenuItem, DropdownButton, ButtonToolbar, Image, Thumbnail } from 'react-bootstrap';
 import './About.css';
 
+import elk from './images/elk.jpg';
+import cat from './images/cat.jpg';
+import eagle from './images/eagle.jpg';
+import orca from './images/orca.jpg';
+
 class About extends Component{
 render() {
     return(
@@ -51,44 +56,44 @@ render() {
     </Jumbotron>
     <Panel>
     <Panel.Heading>
-      <Panel.Title componentClass="h3">Panel heading with a title</Panel.Title>
+      <Panel.Title componentClass="h3">About the Whistlr Team</Panel.Title>
     </Panel.Heading>
-    <Panel.Body>Panel content
+    <Panel.Body>
     <Grid>
   <Row>
     <Col xs={6} md={3}>
-      <Thumbnail src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-R3Aazj9u_SRSz1qA311hcXX4oKGPPWL9k5H7-cqFCuSebumu" alt="242x200">
-        <h3>Junior Senior full Stack Developer</h3>
-        <p>David Latuno</p>
+      <Thumbnail src={ elk } className="spiritAnimal" alt="242x200">
+        <h3>Elk</h3>
+        <p>Great Grazer</p>
         <p>
-          About development team here.
+          The most majestic animal of untamed North America.
         </p>
       </Thumbnail>
     </Col>
     <Col xs={6} md={3}>
-      <Thumbnail src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRB1FEJAbIqg-_2Jxn8JQ-L5CEbJqSREpj7Kv9gx7-gNGQBSYu" alt="242x200">
-        <h3>Unpaid intern</h3>
-        <p>Clayton Vogan</p>
+      <Thumbnail src={ orca } className="spiritAnimal" alt="242x200">
+        <h3>Orca</h3>
+        <p>The Killer Whale</p>
         <p>
-          About development team here.
+          The most lethal predator of the Deep Blue, the Killer Whale is relentless in it's search for food and in the conquest of providing for and maintaining the family unit. Like the Killer Whale, Whistlr is vigilant in feeding its appetite for social justice.
         </p>
       </Thumbnail>
     </Col>
     <Col xs={6} md={3}>
-      <Thumbnail src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqrohXuA9ZEus6AtVED9UEoeHXWLm4H7gA1LSFxmzsAIO6nugolw" alt="242x200">
-        <h3>Chief technology officer</h3>
-        <p>Tim Brewster</p>
+      <Thumbnail src={ eagle } className="spiritAnimal" alt="242x200">
+        <h3>Cat</h3>
+        <p>El Gato Peligroso</p>
         <p>
-          About development team here.
+          Something interesting about eagles.
         </p>
       </Thumbnail>
     </Col>
     <Col xs={6} md={3}>
-      <Thumbnail src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXKcfVtSeGDqFKNQTXlyw8JwblldE3GrOBevcjnAHWQrjAHkHT6w" alt="242x200">
-        <h3></h3>
-        <p>Khaalid Abdullah</p>
+      <Thumbnail src={ cat } className="spiritAnimal" alt="242x200">
+        <h3>Eagle</h3>
+        <p>Description</p>
         <p>
-          About development team here.
+          The feline is the playful, curious, yet harmless animal that runs through your house and claims ownership of alleys throughout the world. The beach is just one large toilet for this animal, which is how we consider security encryption throughout the Internet. 
         </p>
       </Thumbnail>
     </Col>
