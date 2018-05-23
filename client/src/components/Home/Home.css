@@ -5,3 +5,13 @@
 .learnBtn {
     text-align: center;
 }
+
+.titleDiv{
+    height: 50px;
+}
+
+.caroImage {
+    height: 400px;
+    width: 600px;
+    margin: auto;
+}
