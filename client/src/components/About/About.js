@@ -58,8 +58,8 @@ render() {
   <Row>
     <Col xs={6} md={3}>
       <Thumbnail src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-R3Aazj9u_SRSz1qA311hcXX4oKGPPWL9k5H7-cqFCuSebumu" alt="242x200">
-        <h3>Thumbnail label</h3>
-        <p>Description</p>
+        <h3>Junior Senior full Stack Developer</h3>
+        <p>David Latuno</p>
         <p>
           About development team here.
         </p>
@@ -67,8 +67,8 @@ render() {
     </Col>
     <Col xs={6} md={3}>
       <Thumbnail src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRB1FEJAbIqg-_2Jxn8JQ-L5CEbJqSREpj7Kv9gx7-gNGQBSYu" alt="242x200">
-        <h3>Thumbnail label</h3>
-        <p>Description</p>
+        <h3>Unpaid intern</h3>
+        <p>Clayton Vogan</p>
         <p>
           About development team here.
         </p>
@@ -76,8 +76,8 @@ render() {
     </Col>
     <Col xs={6} md={3}>
       <Thumbnail src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqrohXuA9ZEus6AtVED9UEoeHXWLm4H7gA1LSFxmzsAIO6nugolw" alt="242x200">
-        <h3>Thumbnail label</h3>
-        <p>Description</p>
+        <h3>Chief technology officer</h3>
+        <p>Tim Brewster</p>
         <p>
           About development team here.
         </p>
@@ -85,8 +85,8 @@ render() {
     </Col>
     <Col xs={6} md={3}>
       <Thumbnail src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXKcfVtSeGDqFKNQTXlyw8JwblldE3GrOBevcjnAHWQrjAHkHT6w" alt="242x200">
-        <h3>Thumbnail label</h3>
-        <p>Description</p>
+        <h3></h3>
+        <p>Khaalid Abdullah</p>
         <p>
           About development team here.
         </p>
