@@ -133,8 +133,9 @@ class Posts extends Component {
 
                                 <Panel key={index}>
                                     <Panel.Body>
-                                        <p>Title: {key.title} Category: {key.category}</p>
-                                        <div id="panelContent">Content: {key.content}</div>
+                                        <h3>{key.title}</h3>
+                                        <p className="postContent">Category: {key.category}</p>
+                                        <p id="panelContent" className="postContent">Content: {key.content}</p>
                                     </Panel.Body>
                                 </Panel>
 
