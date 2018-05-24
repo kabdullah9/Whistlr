@@ -55,13 +55,6 @@ class Profile extends Component {
                     </Link>
                         </li>
                         <li>
-                            <Link to="/about">
-                                <i className="glyphicon glyphicon-briefcase"></i>
-                                About
-                    </Link>
-
-                        </li>
-                        <li>
                             <a id="logOut" onClick={this.handleLogout}>
                                 <i className="glyphicon glyphicon-remove-sign"></i>
                                 Log Out

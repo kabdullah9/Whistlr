@@ -96,7 +96,9 @@ class Login extends Component {
                             </div>
                             <button type="submit" className="btn btn-primary">Submit</button>
                         </form>
-                        <p><Link to="/signup">Go to Signup</Link></p>
+                        <p className="reRoute">New to Whistlr?</p>
+                        <p>
+                            <Link to="/signup"><button className="btn btn-info signUpButton">Signup</button></Link></p>
 
                         <Modal show={this.state.show} hide={this.handleClose} text={this.state.message} />
                     </div>

@@ -39,9 +39,9 @@ class Home extends Component {
                         <Row className="titleDiv">
                             <Col xs={12} className="text-center">
                                 <h1>whistlr</h1>
-                                <p>Our service is designed to empower witnesses with safety and anonymity. </p>
+                                <p>Empowering witnesses with safety and anonymity</p>
                                 <p className="learnBtn">
-                                    <Button bsStyle="primary" href="/login" >Get Started</Button>
+                                    <Button bsStyle="primary" href="/signup" >Get Started</Button>
                                 </p>
                             </Col>
                         </Row>
@@ -72,8 +72,8 @@ class Home extends Component {
                 </Carousel>
                 <Panel id="aboutPanel">
                                     <Panel.Body>
-                                        <h2>The Story</h2>
-                                         <p className="aboutTxt">The Whistler App was originally created as a simple in-class application for a coding bootcamp. However this application was turned into something that exceeded everyones expectations. With over 500,000,000 users world-wide, Whistler helps keep users all over the world stay aware of what is going on in their local communitities. Our application features real time whistle updates that will allert users of the most resent incidents.</p> </Panel.Body>
+                                        <h2>The Vision</h2>
+                                         <p className="aboutTxt">There exists a real need in our society for individuals to anonymously inform the public about issues inhibiting the peaceful, progressive coexistence of any groups of people or individuals. Whistler helps keep users all over the world stay aware of what is going on in their local communitities. Our application features real time whistle updates that will allert users of the most recent incidents.</p> </Panel.Body>
                                          <Panel.Footer className="text-center">&copy; Whistlr 2018</Panel.Footer>
                                 </Panel>
                 {/* <Favicon url="https://github.com/kabdullah9/Whistlr/blob/master/client/public/skull.png" /> */}
