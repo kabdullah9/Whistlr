@@ -4,7 +4,6 @@ import { Navbar, Button, Nav, NavItem, Jumbotron, Carousel, Row, Col, Panel, Gri
 import { Link } from 'react-router-dom';
 
 // create navigation to login and signup
-//
 import './Home.css';
 import silenced from './images/silenced.jpg';
 import security from './images/high_security.jpeg';
@@ -73,9 +72,10 @@ class Home extends Component {
                 <Panel id="aboutPanel">
                                     <Panel.Body>
                                         <h2>The Vision</h2>
-                                         <p className="aboutTxt">There exists a real need in our society for individuals to anonymously inform the public about issues inhibiting the peaceful, progressive coexistence of any groups of people or individuals. Whistler helps keep users all over the world stay aware of what is going on in their local communitities. Our application features real time whistle updates that will allert users of the most recent incidents.</p> </Panel.Body>
+                                         <p className="aboutTxt">There exists a real need in our society for individuals to anonymously inform the public about issues inhibiting the peaceful, progressive coexistence of any groups of people or individuals. Whistler helps keep users all over the world stay aware of what is going on in their local communitities. Our application features real time whistle updates that will alert users of the most recent incidents.</p> </Panel.Body>
                                          <Panel.Footer className="text-center">&copy; Whistlr 2018</Panel.Footer>
                                 </Panel>
+                                
                 {/* <Favicon url="https://github.com/kabdullah9/Whistlr/blob/master/client/public/skull.png" /> */}
             </div>
 
