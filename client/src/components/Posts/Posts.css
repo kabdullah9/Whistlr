@@ -3,9 +3,17 @@
 }
 
 .panel-body {
+    text-align: left;
+}
+
+.panel-body h3 {
     text-align: center;
 }
 
 .panel {
     margin-top: 50px;
+}
+
+.postContent {
+    color: white;
 }
