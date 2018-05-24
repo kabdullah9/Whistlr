@@ -1,18 +1,15 @@
 import React, { Component } from 'react';
-import withAuth from '../withAuth';
-import API from '../../utils/API';
-//import Footer from "./Footer";
-import { Navbar, Header, Brand, Toggle, Collapse, Form, FormGroup, Button, FormControl, Nav, NavItem, Jumbotron, Carousel, Item, Caption, Row, Col, Panel, Grid } from 'react-bootstrap';
-import Favicon from 'react-favicon';
-// import { Link } from 'react-router-dom';
+import { Navbar, Button, Nav, NavItem, Jumbotron, Carousel, Row, Col, Panel, Grid } from 'react-bootstrap';
+// import Favicon from 'react-favicon';
+import { Link } from 'react-router-dom';
 
 // create navigation to login and signup
 //
 import './Home.css';
 import silenced from './images/silenced.jpg';
 import security from './images/high_security.jpeg';
-import guard from './images/guard.jpeg';
-import server from './images/server.jpeg';
+import time from './images/watch.jpg';
+import brandLogo from "./images/brandLogo.png"
 
 
 class Home extends Component {
@@ -22,23 +19,17 @@ class Home extends Component {
                 <Navbar>
                     <Navbar.Header>
                         <Navbar.Brand>
-                            <a href="/">Whistlr</a>
+                            <Link to="/"><img alt="logo" src={brandLogo} id="brandlogo" /></Link>
                         </Navbar.Brand>
                         <Navbar.Toggle />
                     </Navbar.Header>
                     <Navbar.Collapse>
-                        <Navbar.Form pullLeft>
-                            <FormGroup>
-                                <FormControl type="text" placeholder="Search" />
-                            </FormGroup>{' '}
-                            <Button type="submit">Submit</Button>
-                        </Navbar.Form>
                         <Nav pullRight>
                             <NavItem eventKey={1} href="/login">
-                                login
+                                Login
                             </NavItem>
                             <NavItem eventKey={2} href="/signup">
-                                signup
+                                Signup
                             </NavItem>
                         </Nav>
                     </Navbar.Collapse>
@@ -46,8 +37,12 @@ class Home extends Component {
                 <Jumbotron>
                     <Grid>
                         <Row className="titleDiv">
-                            <Col xs={12}>
-                                <h1>Welcome to Whistlr!</h1>
+                            <Col xs={12} className="text-center">
+                                <h1>whistlr</h1>
+                                <p>Empowering witnesses with safety and anonymity</p>
+                                <p className="learnBtn">
+                                    <Button bsStyle="primary" href="/signup" >Get Started</Button>
+                                </p>
                             </Col>
                         </Row>
                     </Grid>
@@ -63,29 +58,25 @@ class Home extends Component {
                     <Carousel.Item>
                         <img className="caroImage" alt="900x500" src={security} />
                         <Carousel.Caption>
-                            <h3>Security is our #1 Priority!</h3>
-                            <p>Your information is never recorded and info-seekers are kept out.</p>
-                        </Carousel.Caption>
-                    </Carousel.Item>
-                    <Carousel.Item>
-                        <img className="caroImage" alt="900x500" src={server} />
-                        <Carousel.Caption>
-                            <h3>Your information is secure!</h3>
+                        <h3>Your information is secure!</h3>
                             <p>We use the most cutting edge encryption available on the Internet today.</p>
                         </Carousel.Caption>
                     </Carousel.Item>
+                    <Carousel.Item>
+                        <img className="caroImage" alt="900x500" src={time} />
+                        <Carousel.Caption>
+                            <h3>Real Time Alerts!</h3>
+                            <p>Get all of our users reports as soon as they press submit</p>
+                        </Carousel.Caption>
+                    </Carousel.Item>
                 </Carousel>
-                <Panel>
-                    <Panel.Heading>
-                        <Panel.Title componentClass="h1">About our Page</Panel.Title>
-                    </Panel.Heading>
-                    <Panel.Body>Whistlr executes several key functions different than anyone else online. We protect your data. Our service is designed to empower witnesses with safety and anonymity. </Panel.Body>
-                    <p className="learnBtn">
-                            <Button  bsStyle="primary" href="/about" >Learn more</Button>
-                        </p>
-                        {/* <Footer /> */}
-                </Panel>
-                <Favicon url="https://github.com/kabdullah9/Whistlr/blob/master/client/public/skull.png" />
+                <Panel id="aboutPanel">
+                                    <Panel.Body>
+                                        <h2>The Vision</h2>
+                                         <p className="aboutTxt">There exists a real need in our society for individuals to anonymously inform the public about issues inhibiting the peaceful, progressive coexistence of any groups of people or individuals. Whistler helps keep users all over the world stay aware of what is going on in their local communitities. Our application features real time whistle updates that will allert users of the most recent incidents.</p> </Panel.Body>
+                                         <Panel.Footer className="text-center">&copy; Whistlr 2018</Panel.Footer>
+                                </Panel>
+                {/* <Favicon url="https://github.com/kabdullah9/Whistlr/blob/master/client/public/skull.png" /> */}
             </div>
 
         )
