@@ -98,7 +98,7 @@ class Posts extends Component {
                                     </div>
                                 </div>
                                 <div className="form-group">
-                                    <label htmlFor="formContent" className="col-sm-2 control-label">Content</label>
+                                    <label htmlFor="formContent" className="col-sm-2 control-label">Category</label>
                                     <div className="col-sm-10">
                                         <select onChange={this.handleInputChange} id="category" name="category" className="form-control">
                                             <option className="selectPh" value="" selected disabled hidden>Choose a category</option>
