@@ -3,8 +3,8 @@ import withAuth from '../withAuth';
 import API from '../../utils/API';
 //import Footer from "./Footer";
 import { Navbar, Header, Brand, Toggle, Collapse, Form, FormGroup, Button, FormControl, Nav, NavItem, Jumbotron, Carousel, Item, Caption, Row, Col, Panel, Grid } from 'react-bootstrap';
-import Favicon from 'react-favicon';
-// import { Link } from 'react-router-dom';
+// import Favicon from 'react-favicon';
+import { Link } from 'react-router-dom';
 
 // create navigation to login and signup
 //
@@ -13,6 +13,7 @@ import silenced from './images/silenced.jpg';
 import security from './images/high_security.jpeg';
 import guard from './images/guard.jpeg';
 import server from './images/server.jpeg';
+import brandLogo from "./images/brandLogo.png"
 
 
 class Home extends Component {
@@ -22,23 +23,17 @@ class Home extends Component {
                 <Navbar>
                     <Navbar.Header>
                         <Navbar.Brand>
-                            <a href="/">Whistlr</a>
+                        <Link to="/"><img alt="logo" src={brandLogo} id="brandlogo" /></Link>
                         </Navbar.Brand>
                         <Navbar.Toggle />
                     </Navbar.Header>
                     <Navbar.Collapse>
-                        <Navbar.Form pullLeft>
-                            <FormGroup>
-                                <FormControl type="text" placeholder="Search" />
-                            </FormGroup>{' '}
-                            <Button type="submit">Submit</Button>
-                        </Navbar.Form>
                         <Nav pullRight>
                             <NavItem eventKey={1} href="/login">
-                                login
+                                Login
                             </NavItem>
                             <NavItem eventKey={2} href="/signup">
-                                signup
+                                Signup
                             </NavItem>
                         </Nav>
                     </Navbar.Collapse>
@@ -85,7 +80,7 @@ class Home extends Component {
                         </p>
                         {/* <Footer /> */}
                 </Panel>
-                <Favicon url="https://github.com/kabdullah9/Whistlr/blob/master/client/public/skull.png" />
+                {/* <Favicon url="https://github.com/kabdullah9/Whistlr/blob/master/client/public/skull.png" /> */}
             </div>
 
         )
