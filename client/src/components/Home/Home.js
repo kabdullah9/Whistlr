@@ -1,16 +1,22 @@
 import React, { Component } from 'react';
-import withAuth from './../withAuth';
+import withAuth from '../withAuth';
 import API from '../../utils/API';
+//import Footer from "./Footer";
 import { Navbar, Header, Brand, Toggle, Collapse, Form, FormGroup, Button, FormControl, Nav, NavItem, Jumbotron, Carousel, Item, Caption, Row, Col, Panel, Grid } from 'react-bootstrap';
+import Favicon from 'react-favicon';
 // import { Link } from 'react-router-dom';
 
 // create navigation to login and signup
 //
 import './Home.css';
+import silenced from './images/silenced.jpg';
+import security from './images/high_security.jpeg';
+import guard from './images/guard.jpeg';
+import server from './images/server.jpeg';
+
 
 class Home extends Component {
     render() {
-
         return (
             <div className="home">
                 <Navbar>
@@ -39,7 +45,7 @@ class Home extends Component {
                 </Navbar>
                 <Jumbotron>
                     <Grid>
-                        <Row className="show-grid">
+                        <Row className="titleDiv">
                             <Col xs={12}>
                                 <h1>Welcome to Whistlr!</h1>
                             </Col>
@@ -48,24 +54,24 @@ class Home extends Component {
                 </Jumbotron>
                 <Carousel>
                     <Carousel.Item>
-                        <img width={900} height={500} alt="900x500" src="https://files.slack.com/files-pri/T96BXT5RT-FANDHQM8T/image.png" />
+                        <img className="caroImage" alt="900x500" src={silenced} />
                         <Carousel.Caption>
-                            <h3>First slide label</h3>
-                            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                            <h3>Take off the red tape!</h3>
+                            <p>Billions of people are silenced everyday by the figurative red tape that is whistleblower harassment in our society.</p>
                         </Carousel.Caption>
                     </Carousel.Item>
                     <Carousel.Item>
-                        <img width={900} height={500} alt="900x500" src="https://files.slack.com/files-pri/T96BXT5RT-FANDFANP5/image.png" />
+                        <img className="caroImage" alt="900x500" src={security} />
                         <Carousel.Caption>
-                            <h3>Second slide label</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            <h3>Security is our #1 Priority!</h3>
+                            <p>Your information is never recorded and info-seekers are kept out.</p>
                         </Carousel.Caption>
                     </Carousel.Item>
                     <Carousel.Item>
-                        <img width={900} height={500} alt="900x500" src="https://files.slack.com/files-pri/T96BXT5RT-FAR4Z03V0/image.png" />
+                        <img className="caroImage" alt="900x500" src={server} />
                         <Carousel.Caption>
-                            <h3>Third slide label</h3>
-                            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                            <h3>Your information is secure!</h3>
+                            <p>We use the most cutting edge encryption available on the Internet today.</p>
                         </Carousel.Caption>
                     </Carousel.Item>
                 </Carousel>
@@ -73,12 +79,13 @@ class Home extends Component {
                     <Panel.Heading>
                         <Panel.Title componentClass="h1">About our Page</Panel.Title>
                     </Panel.Heading>
-                    <Panel.Body>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</Panel.Body>
+                    <Panel.Body>Whistlr executes several key functions different than anyone else online. We protect your data. Our service is designed to empower witnesses with safety and anonymity. </Panel.Body>
                     <p className="learnBtn">
                             <Button  bsStyle="primary" href="/about" >Learn more</Button>
                         </p>
-                        <Panel.Footer>Panel footer</Panel.Footer>
+                        {/* <Footer /> */}
                 </Panel>
+                <Favicon url="https://github.com/kabdullah9/Whistlr/blob/master/client/public/skull.png" />
             </div>
 
         )

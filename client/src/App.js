@@ -1,10 +1,15 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import logo from './logo.svg';
+import Footer from "./components/Footer";
 import './App.css';
 
 class App extends Component {
 
+
+  goToProfile = () => {
+    this.props.history.replace('/login');
+  };
 
   render() {
     return (
@@ -17,6 +22,7 @@ class App extends Component {
         <Link to="/login"><button type="button" className="btn btn-primary">Login</button></Link>
         <Link to="/signup"><button type="button" className="btn btn-danger">Signup</button></Link>
         </p>
+      <Footer />
       </div>
     );
   }
