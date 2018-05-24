@@ -3,8 +3,9 @@
 }
 
 #brandlogo {
-    margin-top: -3px;
-    width: 40px;
+    margin-top: -10px;
+    margin-left: -20px;
+    width: 60px;
 }
 
 .jumbotron {
@@ -28,7 +29,12 @@
 
 .caroImage {
     font-family: 'Titillium Web', sans-serif;
-    height: 400px;
-    width: 600px;
+
+    width: 1000px;
     margin: auto;
+}
+
+#aboutPanel {
+    background: transparent;
+    border-color: transparent;margin-bottom: 0px;
 }
