@@ -12,5 +12,6 @@ h1, h3 {
 }
 
 #aboutPanel {
+    margin-top: -10px;
     border-color: transparent;
 }

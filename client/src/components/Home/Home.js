@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import withAuth from '../withAuth';
 import API from '../../utils/API';
-//import Footer from "./Footer";
+// import Footer from "./Footer";
 import { Navbar, Header, Brand, Toggle, Collapse, Form, FormGroup, Button, FormControl, Nav, NavItem, Jumbotron, Carousel, Item, Caption, Row, Col, Panel, Grid } from 'react-bootstrap';
 // import Favicon from 'react-favicon';
 import { Link } from 'react-router-dom';
@@ -23,7 +23,7 @@ class Home extends Component {
                 <Navbar>
                     <Navbar.Header>
                         <Navbar.Brand>
-                        <Link to="/"><img alt="logo" src={brandLogo} id="brandlogo" /></Link>
+                            <Link to="/"><img alt="logo" src={brandLogo} id="brandlogo" /></Link>
                         </Navbar.Brand>
                         <Navbar.Toggle />
                     </Navbar.Header>
@@ -43,6 +43,10 @@ class Home extends Component {
                         <Row className="titleDiv">
                             <Col xs={12}>
                                 <h1>Welcome to Whistlr!</h1>
+                                <p>Whistlr executes several key functions different than anyone else online. We protect your data. Our service is designed to empower witnesses with safety and anonymity. </p>
+                                <p className="learnBtn">
+                                    <Button bsStyle="primary" href="/about" >Learn more</Button>
+                                </p>
                             </Col>
                         </Row>
                     </Grid>
@@ -70,16 +74,6 @@ class Home extends Component {
                         </Carousel.Caption>
                     </Carousel.Item>
                 </Carousel>
-                <Panel>
-                    <Panel.Heading>
-                        <Panel.Title componentClass="h1">About our Page</Panel.Title>
-                    </Panel.Heading>
-                    <Panel.Body>Whistlr executes several key functions different than anyone else online. We protect your data. Our service is designed to empower witnesses with safety and anonymity. </Panel.Body>
-                    <p className="learnBtn">
-                            <Button  bsStyle="primary" href="/about" >Learn more</Button>
-                        </p>
-                        {/* <Footer /> */}
-                </Panel>
                 {/* <Favicon url="https://github.com/kabdullah9/Whistlr/blob/master/client/public/skull.png" /> */}
             </div>
 
