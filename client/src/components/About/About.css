@@ -6,3 +6,11 @@ h1, h3 {
 .aboutTxt {
     font-size: 20px;
 }
+
+#mainPanel {
+    margin: -20px 0 0 0;
+}
+
+#aboutPanel {
+    border-color: transparent;
+}
