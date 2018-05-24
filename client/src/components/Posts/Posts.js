@@ -105,7 +105,9 @@ class Posts extends Component {
                                             <option value="General">General</option>
                                             <option value="Theft">Theft</option>
                                             <option value="Assault">Assault</option>
-
+                                            <option value="Work Place">Work Place</option>
+                                            <option value="Environmental">Environmental</option>
+                                            <option value="Local">Local</option>
                                         </select>
                                     </div>
                                 </div>
